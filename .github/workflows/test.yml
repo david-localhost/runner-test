@@ -1,0 +1,17 @@
+name: Self-hosted Runner Test
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: self-hosted
+    steps:
+      - name: Check runner environment
+        run: |
+          echo "✅ Runner is working!"
+          echo "Hostname: $(hostname)"
+          echo "User: $(whoami)"
+          echo "Date: $(date)"
+          echo "macOS version: $(sw_vers -productVersion)"
